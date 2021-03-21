@@ -1,0 +1,19 @@
+<div class="app-day">
+  <ng-container
+    *ngIf="
+      !(isEventsLoading$ | async) && (isEventsLoaded$ | async);
+      else loading
+    "
+  >
+    <mat-card>
+      <app-timesheet></app-timesheet>
+      <router-outlet></router-outlet>
+    </mat-card>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="spinner-wrapper">
+      <mat-spinner class="mat-spinner-color"></mat-spinner>
+    </div>
+  </ng-template>
+</div>

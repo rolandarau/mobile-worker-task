@@ -1,0 +1,50 @@
+.calendar-header {
+  margin-right: 7%;
+}
+
+.calendar-header__item {
+  width: 50%;
+}
+
+.calendar-header__item--date {
+  font-size: 16px;
+}
+
+.timesheet-header__item--link {
+  font-size: 16px;
+  white-space: nowrap;
+  float: right;
+  color: #f08900;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calendar-wrapper {
+  margin-bottom: 1%;
+}
+
+.week {
+  display: flex;
+  margin-left: 2%;
+}
+
+.week__day {
+  width: 50%;
+}
+
+.mat-icon {
+  float: right;
+  cursor: pointer;
+}
+
+.timesheet-header {
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+.timesheet-header__item--date {
+  float: left;
+  margin: 1pt;
+  width: 72pt;
+  height: 72pt;
+}

@@ -1,0 +1,63 @@
+<ng-container *ngIf="selectedDayEvent$ | async as dayEvents; else noDayEvents">
+  <div class="event-info-heading">
+    <div class="event-summary-container">
+      <div class="event-summary-container__content">
+        <mat-icon class="mat-icon">schedule</mat-icon>
+        <span class="aligned-with-icon">Hours</span>
+      </div>
+      <div class="event-summary-container__content">
+        <div class="event-summary-container--content--value">
+          <p>({{ dayEvents.firstTaskStart }}-{{ dayEvents.lastTaskEnd }})</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-info-content">
+    <div class="event-summary-container">
+      <div class="event-summary-container__content">
+        <p class="category-color">Type</p>
+      </div>
+      <div class="event-summary-container__content">
+        <div class="vent-summary-container--content--value">
+          <p class="value-alignment">Duration</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-info-content">
+    <div class="event-summary-container">
+      <div class="event-summary-container__content">
+        <p>{{ dayEvents.eventTypeName }}</p>
+      </div>
+      <div class="event-summary-container__content">
+        <div class="vent-summary-container--content--value">
+          <p class="value-alignment">{{ dayEvents.workDuration }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="event-info-heading">
+    <div class="event-summary-container">
+      <div class="event-summary-container__content">
+        <mat-icon class="mat-icon">schedule</mat-icon>
+        <span class="aligned-with-icon">Hours</span>
+      </div>
+      <div class="event-summary-container__content">
+        <div class="event-summary-container--content--value">
+          <p>({{ dayEvents.firstTaskStart }}-{{ dayEvents.lastTaskEnd }})</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template #noDayEvents>
+  <div class="no-events">
+    <div class="no-events__content">
+      <p>No events for selected day</p>
+    </div>
+  </div>
+</ng-template>

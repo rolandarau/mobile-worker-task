@@ -1,0 +1,29 @@
+<div [ngClass]="calendarItemWrapper" (click)="onWeekDayMarked(weekDay.day)">
+  <div class="alignment">
+    <div>
+      <p class="day__item">{{ weekDay.weekdayName }}</p>
+    </div>
+
+    <div [ngClass]="dayStyle" class="test">
+      <p class="day__item day___item--number">{{ weekDay.day }}</p>
+    </div>
+
+    <div *ngIf="weekDay.workDuration" class="day__item--time">
+      <p>{{ weekDay.workDuration }}:00</p>
+    </div>
+
+    <div class="day__item">
+      <ng-container
+        *ngIf="weekDay.approvalState !== approvalStates.NoEvents; else noEvents"
+      >
+        <mat-icon [ngClass]="approvalStateStyles[weekDay.approvalState]"
+          >circle</mat-icon
+        >
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #noEvents>
+  <p>-</p>
+</ng-template>

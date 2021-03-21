@@ -1,0 +1,47 @@
+<ng-container *ngIf="weekDays$ | async as weekdays">
+  <ng-container *ngIf="selectedDayInfo$ | async as selectedDayInfo">
+      <div class="calendar-header week">
+        <div class="calendar-header__item week">
+          <h2>
+            {{ monthNames[selectedDayInfo.month] }} {{ selectedDayInfo.year }}
+          </h2>
+        </div>
+        <div
+          class="calendar-header__item"
+          (click)="onDaySelect(weekdays[6].day)"
+        >
+          <mat-icon class="mat-icon">calendar_today</mat-icon>
+        </div>
+      </div>
+
+      <div class="week calendar-wrapper">
+        <ng-container *ngFor="let weekDay of weekdays; let index = index">
+          <app-day
+            class="week__day"
+            [isToday]="index === 6"
+            [isWeekend]="weekDay.weekday === 0 || weekDay.weekday === 6"
+            [weekDay]="weekDay"
+            [isMarked]="(selectedDay$ | async) === weekDay.day"
+            (daySelected)="onDaySelect($event)"
+          ></app-day>
+        </ng-container>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="calendar-header week timesheet-header">
+        <div class="calendar-header__item week">
+          <p class="calendar-header__item--date">
+            {{ fullWeekdayNames[selectedDayInfo.weekdayName] }}
+            {{ selectedDayInfo.fullDate }}
+          </p>
+        </div>
+        <div class="calendar-header__item">
+          <p
+            class="timesheet-header__item--link"
+            [routerLink]="['/timesheet', selectedDay$ | async]"
+          >
+            GO TO TIMESHEET
+          </p>
+        </div>
+      </div>
+  </ng-container>
+</ng-container>

@@ -1,0 +1,92 @@
+{
+  "events": {
+    "2021-03-17": [
+      {
+        "quantity": 3,
+        "price": 1000,
+        "eventTypeName": "Event 1",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 2,
+        "price": 555,
+        "eventTypeName": "Event 2",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 3,
+        "price": 1000,
+        "eventTypeName": "Event 3",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": false,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      }
+    ],
+    "2021-03-16": [
+      {
+        "quantity": 3,
+        "price": 222,
+        "eventTypeName": "Event 4",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 2,
+        "price": 555,
+        "eventTypeName": "Event 5",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 3,
+        "price": 344,
+        "eventTypeName": "Event 6",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      }
+    ]
+  }
+}
