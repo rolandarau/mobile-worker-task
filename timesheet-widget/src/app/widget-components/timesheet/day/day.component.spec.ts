@@ -19,7 +19,7 @@ describe('DayComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DayComponent);
     component = fixture.componentInstance;
-    component.weekDayWithEvents = calendarDayMock;
+    component.weekDay = calendarDayMock;
     fixture.detectChanges();
   });
 

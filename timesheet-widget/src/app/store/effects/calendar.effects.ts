@@ -62,7 +62,6 @@ export class CalendarEffects {
         workDuration = workDuration + workEvent.quantity;
       }
     });
-    console.log(workDuration);
     return workDuration;
   }
 

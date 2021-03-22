@@ -6,9 +6,9 @@ describe('Events actions', () => {
   });
 
   it('should create fetchEventsSuccess action', () => {
-    expect(fetchEventsSuccess({ events: [] })).toEqual({
+    expect(fetchEventsSuccess({ events: {} })).toEqual({
       type: fetchEventsSuccess.type,
-      events: [],
+      events: {},
     });
   });
 });

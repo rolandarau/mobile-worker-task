@@ -9,8 +9,6 @@ describe('Events Reducer', () => {
       expect(state).toEqual({
         ...initialState,
         loading: true,
-        entities: {},
-        ids: [],
       });
     });
   });
@@ -19,14 +17,13 @@ describe('Events Reducer', () => {
     it('should store data and set loaded to true', () => {
       const state: EventsState = eventsReducer(
         initialState,
-        fetchEventsSuccess({ events: [] })
+        fetchEventsSuccess({ events: {} })
       );
 
       expect(state).toEqual({
-        entities: {},
-        ids: [],
         loading: false,
         loaded: true,
+        workEvents: {}
       });
     });
   });

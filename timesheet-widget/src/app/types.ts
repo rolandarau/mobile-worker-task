@@ -1,11 +1,10 @@
-import { ApprovalState, EventTypes } from "./constants";
+import { ApprovalState } from "./constants";
 
 export interface FetchEventsRes {
-    [key: number]: WorkEvent;
+    [key: string]: WorkEvent[];
   }
 
 export interface WorkEvent {
-    date: string;
     quantity: number;
     price: number;
     eventTypeName: string;
@@ -15,24 +14,7 @@ export interface WorkEvent {
     isWorkHour: boolean;
     isApproved: boolean;
     isRejected: boolean;
-    tasksCount: boolean;
-    firstTaskStart: string;
-    lastTaskEnd: string;
-  }
-  
-  export interface WorkEvent {
-    id: string;
-    date: string;
-    quantity: number;
-    price: number;
-    eventTypeName: string;
-    isExpenseType: boolean;
-    isHoursEventType: boolean;
-    isAdditionalHoursEventType: boolean;
-    isWorkHour: boolean;
-    isApproved: boolean;
-    isRejected: boolean;
-    tasksCount: boolean;
+    tasksCount: number;
     firstTaskStart: string;
     lastTaskEnd: string;
   }

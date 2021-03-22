@@ -1,4 +1,3 @@
-import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 import { FetchEventsRes } from 'src/app/types';
 import { fetchEvents, fetchEventsSuccess } from '../actions/events.actions';

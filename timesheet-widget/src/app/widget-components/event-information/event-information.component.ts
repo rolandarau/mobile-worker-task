@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { getGroupedEventsForDate } from 'src/app/store/selectors/events.selectors';
 import { EventsGroupKeyValuePairs } from 'src/app/types';
 
@@ -22,8 +22,5 @@ export class EventInformationComponent implements OnInit {
         const id = params.get('id');
         return this.store.select(getGroupedEventsForDate, id);
       })
-    );
-
-    this.selectedDayEvent$.pipe(take(1)).subscribe((res) => console.log(res));
-  }
+    );  }
 }
