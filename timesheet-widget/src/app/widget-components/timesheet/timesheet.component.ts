@@ -7,7 +7,7 @@ import { setNewSelectedDay } from 'src/app/store/actions/calendar.actions';
 import {
   getSelectedDayNumber,
   getSelectedWeekDayInfo,
-  getWeekDays
+  getWeekDays,
 } from 'src/app/store/selectors/calendar.selectors';
 import { CalendarDay } from 'src/app/types';
 
@@ -32,8 +32,10 @@ export class TimesheetComponent implements OnInit {
     this.selectedDayInfo$ = this.store.select(getSelectedWeekDayInfo);
   }
 
-  public onDaySelect(day: number): void {
-    this.router.navigate(['']);
+  public onDaySelect(day: number, isGoToTodayAction: boolean = false): void {
+    isGoToTodayAction
+      ? this.router.navigate(['/timesheet', day])
+      : this.router.navigate(['']);
     this.store.dispatch(setNewSelectedDay({ day: day }));
   }
 }

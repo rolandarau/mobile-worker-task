@@ -30,7 +30,6 @@ export class DayComponent implements OnInit, OnChanges {
   public readonly approvalStates: typeof ApprovalState = ApprovalState;
   public readonly approvalStateStyles: typeof ApprovalStateStyle = ApprovalStateStyle;
 
-
   ngOnChanges(changes: SimpleChanges): void {
     if ('isMarked' in changes) {
       this.setDayStyleClass();
@@ -47,7 +46,7 @@ export class DayComponent implements OnInit, OnChanges {
   }
 
   private setDayStyleClass(): void {
-    if (this.isToday) {
+    if (this.isToday && !this.isMarked) {
       this.dayStyle = 'day__today';
     } else if (this.isMarked) {
       this.dayStyle = 'day__marked';

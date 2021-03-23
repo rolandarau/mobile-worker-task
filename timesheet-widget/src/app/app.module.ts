@@ -25,6 +25,7 @@ import {
   eventsFeatureKey,
   eventsReducer
 } from './store/reducers/events.reducer';
+import { AddTaskComponent } from './widget-components/add-task/add-task.component';
 import { EventInformationComponent } from './widget-components/event-information/event-information.component';
 import { DayComponent } from './widget-components/timesheet/day/day.component';
 import { TimesheetComponent } from './widget-components/timesheet/timesheet.component';
@@ -35,6 +36,7 @@ import { TimesheetComponent } from './widget-components/timesheet/timesheet.comp
     TimesheetComponent,
     DayComponent,
     EventInformationComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,

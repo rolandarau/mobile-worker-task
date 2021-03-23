@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -21,13 +22,19 @@ export class CalendarEffects {
       withLatestFrom(this.store.select(getEvents)),
       switchMap(([_, workEvents]) => {
         const days: Date[] = [...Array(7)].map((_, i) => {
-          const d = new Date();
+          let d = new Date();
           d.setDate(d.getDate() - i);
           return d;
         });
+
+        const weekDays: CalendarDay[] = this.mapWeekDaysWithEvents(
+          days,
+          workEvents
+        );
+        this.router.navigate(['/timesheet', weekDays[6].day]);
         return [
           setWeekDays({
-            days: this.mapWeekDaysWithEvents(days, workEvents),
+            days: weekDays,
           }),
         ];
       })
@@ -78,16 +85,24 @@ export class CalendarEffects {
   }
 
   private formatDate(date: Date): string {
-    var d: Date = new Date(date),
+    let d: Date = new Date(date),
       month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
       year = d.getFullYear();
 
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
+    if (month.length < 2) {
+      month = '0' + month;
+    }
+    if (day.length < 2) {
+      day = '0' + day;
+    }
 
     return [year, month, day].join('-');
   }
 
-  constructor(private actions$: Actions, private store: Store<{}>) {}
+  constructor(
+    private actions$: Actions,
+    private store: Store<{}>,
+    private router: Router
+  ) {}
 }
