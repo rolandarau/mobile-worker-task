@@ -2,10 +2,11 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { hot } from 'jasmine-marbles';
 import { of } from 'rxjs';
 import {
   getEventsForDayExist,
-  getGroupedEventsForDate
+  getGroupedEventsForDate,
 } from 'src/app/store/selectors/events.selectors';
 import { EventInformationComponent } from './event-information.component';
 
@@ -13,6 +14,12 @@ describe('EventInformationComponent', () => {
   let component: EventInformationComponent;
   let fixture: ComponentFixture<EventInformationComponent>;
   let store: MockStore<{}>;
+
+  const groupedEventsMock = {
+    HOURS_TYPE: [],
+    EXPENSES_TYPE: [],
+    ADDITIONAL_HOURS_TYPE: [],
+  };
 
   beforeEach(
     waitForAsync(() => {
@@ -34,16 +41,21 @@ describe('EventInformationComponent', () => {
     fixture = TestBed.createComponent(EventInformationComponent);
     component = fixture.componentInstance;
     store = TestBed.inject(MockStore);
-    store.overrideSelector(getGroupedEventsForDate, {
-      HOURS_TYPE: [],
-      EXPENSES_TYPE: [],
-      ADDITIONAL_HOURS_TYPE: [],
-    });
+    store.overrideSelector(getGroupedEventsForDate, groupedEventsMock);
     store.overrideSelector(getEventsForDayExist, true);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('#ngOnInit', () => {
+    it('should set selectedDayEvent and getEventsForDayExist values', () => {
+      expect(component.selectedDayEvent$).toBeObservable(
+        hot('a-', { a: groupedEventsMock })
+      );
+      expect(component.eventsExists$).toBeObservable(hot('a-', { a: true }));
+    });
   });
 });

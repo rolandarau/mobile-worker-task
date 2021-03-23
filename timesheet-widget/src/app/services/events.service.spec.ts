@@ -5,6 +5,7 @@ import {
 } from '@angular/common/http/testing';
 import { EventsService } from './events.service';
 import { HttpClient } from '@angular/common/http';
+import { FetchEventsRes } from '../types';
 
 describe('EventsService', () => {
   let service: EventsService;
@@ -20,5 +21,19 @@ describe('EventsService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  describe('#loadEvents', () => {
+    it('should return a FetchEventsRes observable', () => {
+      const fetchEventsRes: FetchEventsRes = { '2020-10-10': [] };
+
+      service.loadEvents().subscribe((events) => {
+        expect(events).toEqual(fetchEventsRes);
+      });
+
+      const req = httpMock.expectOne('http://localhost:3000/events');
+      expect(req.request.method).toBe('GET');
+      req.flush(fetchEventsRes);
+    });
   });
 });

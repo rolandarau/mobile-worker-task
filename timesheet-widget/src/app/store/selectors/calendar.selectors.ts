@@ -30,8 +30,3 @@ export const getSelectedWeekDayInfo = createSelector(
     return weekDays.find((weekday) => weekday.day === selectedDay);
   }
 );
-
-export const getSelectedWeekDayEvents = createSelector(
-  getSelectedWeekDayInfo,
-  (weekday) => weekday.dayEvents
-);

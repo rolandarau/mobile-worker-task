@@ -1,14 +1,18 @@
 import {
+  eventMock,
   mockedCalendarState,
-  mockedEventsSate
+  mockedEventsSate,
+  weekMock,
 } from 'src/app/testing-mocks';
 import { CalendarState } from '../reducers/calendar.reducer';
 import { EventsState } from '../reducers/events.reducer';
 import {
+  getEvents,
+  getEventsForDayExist,
   getEventsState,
-
+  getGroupedEventsForDate,
   getIsEventsLoaded,
-  getIsEventsLoading
+  getIsEventsLoading,
 } from './events.selectors';
 
 describe('Events selectors', () => {
@@ -24,6 +28,10 @@ describe('Events selectors', () => {
     expect(getEventsState.projector(state.events)).toEqual(state.events);
   });
 
+  it('should return events', () => {
+    expect(getEvents.projector(state.events)).toEqual(state.events.workEvents);
+  });
+
   it('should return loaded', () => {
     expect(getIsEventsLoaded.projector(state.events)).toEqual(
       state.events.loaded
@@ -34,5 +42,29 @@ describe('Events selectors', () => {
     expect(getIsEventsLoading.projector(state.events)).toEqual(
       state.events.loading
     );
+  });
+
+  it('should return grouped events for date', () => {
+    expect(
+      getGroupedEventsForDate.projector(
+        state.events.workEvents,
+        state.calendar.entities,
+        22
+      )
+    ).toEqual({
+      HOURS_TYPE: [],
+      EXPENSES_TYPE: [],
+      ADDITIONAL_HOURS_TYPE: [eventMock],
+    });
+  });
+
+  it('should return true if events for day exist', () => {
+    expect(
+      getEventsForDayExist.projector(
+        state.events.workEvents,
+        state.calendar.entities,
+        22
+      )
+    ).toBe(true);
   });
 });
