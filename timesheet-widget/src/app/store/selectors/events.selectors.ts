@@ -25,16 +25,23 @@ export const getGroupedEventsForDate = createSelector(
   getEvents,
   getWeekDaysEntities,
   (workEvents, weekdays, day) => ({
-    HOURS_TYPE: [
-      workEvents[weekdays[day].fullDate]?.filter((workEvent) => workEvent.isHoursEventType) || []
-    ],
-    EXPENSES_TYPE: [
-      workEvents[weekdays[day].fullDate]?.filter((workEvent) => workEvent.isExpenseType) || []
-    ],
-    ADDITIONAL_HOURS_TYPE: [
+    HOURS_TYPE:
+      workEvents[weekdays[day].fullDate]?.filter(
+        (workEvent) => workEvent.isHoursEventType
+      ) || [],
+    EXPENSES_TYPE:
+      workEvents[weekdays[day].fullDate]?.filter(
+        (workEvent) => workEvent.isExpenseType
+      ) || [],
+    ADDITIONAL_HOURS_TYPE:
       workEvents[weekdays[day].fullDate]?.filter(
         (workEvent) => workEvent.isAdditionalHoursEventType
-      ) || []
-    ],
+      ) || [],
   })
+);
+
+export const getEventsForDayExist = createSelector(
+  getEvents,
+  getWeekDaysEntities,
+  (workEvents, weekDays, day) => !!workEvents[weekDays[day].fullDate]?.length
 );

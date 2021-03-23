@@ -1,16 +1,12 @@
-.app-day {
-  width: 100vw;
-  height: 100vh;
-  overflow: none;
-  background-color: #f3f3f4;
-}
-
-.mat-card {
+.widget-content {
+  background-color: white;
   width: 90%;
-  height: 90%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  height: calc(100vh - 90px);
+  z-index: 1;
+  margin: auto;
+  overflow: scroll;
+  top:3%;
+  position: relative;
 }
 
 .mat-spinner-color::ng-deep circle {
@@ -22,4 +18,39 @@
   justify-content: center;
   align-items: center;
   height: calc(100vh - 20px);
+}
+
+.router-content {
+  position: relative;
+  top: 280px;
+  width: 90%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 360px) {
+  .router-content {
+    position: relative;
+    top: 255px;
+    width: 90%;
+    margin: auto;
+  }
+}
+
+.widget-footer {
+  background-color: #f3f3f4;
+  position: fixed;
+  display: flex;
+  bottom: 10px;
+  width: 90%;
+  justify-content: center;
+}
+
+.mat-button {
+  margin-top: 20px;
+  color: #f3f3f4;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #f08900;
+  margin-bottom: 20px;
+  width: 450px;
 }

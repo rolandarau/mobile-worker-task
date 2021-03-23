@@ -1,6 +1,8 @@
+import { DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,9 +16,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DayComponent } from './widget-components/timesheet/day/day.component';
-import { EventInformationComponent } from './widget-components/event-information/event-information.component';
-import { TimesheetComponent } from './widget-components/timesheet/timesheet.component';
 import { effects } from './store/effects';
 import {
   calendarFeatureKey,
@@ -26,6 +25,9 @@ import {
   eventsFeatureKey,
   eventsReducer
 } from './store/reducers/events.reducer';
+import { EventInformationComponent } from './widget-components/event-information/event-information.component';
+import { DayComponent } from './widget-components/timesheet/day/day.component';
+import { TimesheetComponent } from './widget-components/timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
@@ -54,8 +56,9 @@ import {
     MatProgressSpinnerModule,
     MatDividerModule,
     MatListModule,
+    MatButtonModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })

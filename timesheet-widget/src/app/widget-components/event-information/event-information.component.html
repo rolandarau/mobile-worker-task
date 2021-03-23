@@ -1,57 +1,160 @@
-<ng-container *ngIf="selectedDayEvent$ | async as dayEvents; else noDayEvents">
-  <div class="event-info-heading">
-    <div class="event-summary-container">
-      <div class="event-summary-container__content">
-        <mat-icon class="mat-icon">schedule</mat-icon>
-        <span class="aligned-with-icon">Hours</span>
-      </div>
-      <div class="event-summary-container__content">
-        <div class="event-summary-container--content--value">
-          <p>({{ dayEvents.firstTaskStart }}-{{ dayEvents.lastTaskEnd }})</p>
+<ng-container *ngIf="eventsExists$ | async; else noDayEvents">
+  <ng-container *ngIf="selectedDayEvent$ | async as dayEvents">
+    <ng-container *ngIf="dayEvents[eventTypes.HoursType] as hoursTypeEvents">
+      <ng-container *ngIf="hoursTypeEvents.length">
+        <div class="event-info-heading">
+          <div class="event-summary-container event-summary-container--margin">
+            <div class="event-summary-container__content">
+              <mat-icon class="mat-icon">schedule</mat-icon>
+              <span class="aligned-with-icon">Hours</span>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container--content--value">
+                <p>
+                  ({{ hoursTypeEvents[0].firstTaskStart }}-{{
+                    hoursTypeEvents[0].lastTaskEnd
+                  }})
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="event-info-content">
-    <div class="event-summary-container">
-      <div class="event-summary-container__content">
-        <p class="category-color">Type</p>
-      </div>
-      <div class="event-summary-container__content">
-        <div class="vent-summary-container--content--value">
-          <p class="value-alignment">Duration</p>
+        <div class="event-info-content">
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p class="category-color">Type</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container--content--value">
+                <p class="value-alignment">Duration</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div
+          *ngFor="let hoursTypeEvent of hoursTypeEvents"
+          class="event-info-content"
+        >
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p>{{ hoursTypeEvent.eventTypeName }}</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div>
+                <p class="value-alignment">{{ hoursTypeEvent.quantity }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
 
-  <div class="event-info-content">
-    <div class="event-summary-container">
-      <div class="event-summary-container__content">
-        <p>{{ dayEvents.eventTypeName }}</p>
-      </div>
-      <div class="event-summary-container__content">
-        <div class="vent-summary-container--content--value">
-          <p class="value-alignment">{{ dayEvents.workDuration }}</p>
+    <ng-container
+      *ngIf="dayEvents[eventTypes.ExpensesType] as expensesTypeEvents"
+    >
+      <ng-container *ngIf="expensesTypeEvents.length">
+        <div class="event-info-heading">
+          <div class="event-summary-container event-summary-container--margin">
+            <div class="event-summary-container__content">
+              <mat-icon class="mat-icon">attach_money</mat-icon>
+              <span class="aligned-with-icon">Expenses</span>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container--content--value"></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="event-info-heading">
-    <div class="event-summary-container">
-      <div class="event-summary-container__content">
-        <mat-icon class="mat-icon">schedule</mat-icon>
-        <span class="aligned-with-icon">Hours</span>
-      </div>
-      <div class="event-summary-container__content">
-        <div class="event-summary-container--content--value">
-          <p>({{ dayEvents.firstTaskStart }}-{{ dayEvents.lastTaskEnd }})</p>
+        <div class="event-info-content">
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p class="category-color">Type</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container__content">
+                <p class="align-left category-color">Quantity</p>
+              </div>
+              <div class="event-summary-container--content--value">
+                <p class="value-alignment">Total</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div
+          *ngFor="let expensesTypeEvent of expensesTypeEvents"
+          class="event-info-content"
+        >
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p>{{ expensesTypeEvent.eventTypeName }}</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container__content">
+                <p class="align-left">{{ expensesTypeEvent.quantity }}</p>
+              </div>
+              <div>
+                <p class="value-alignment">
+                  {{ expensesTypeEvent.quantity * expensesTypeEvent.price }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <ng-container
+      *ngIf="
+        dayEvents[eventTypes.AdditionalHoursType] as additionalHoursTypeEvents
+      "
+    >
+      <ng-container *ngIf="additionalHoursTypeEvents.length">
+        <div class="event-info-heading">
+          <div class="event-summary-container event-summary-container--margin">
+            <div class="event-summary-container__content">
+              <mat-icon class="mat-icon">more_time</mat-icon>
+              <span class="aligned-with-icon">Additional hours</span>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container--content--value"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="event-info-content">
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p class="category-color">Type</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div class="event-summary-container--content--value">
+                <p class="value-alignment">Amount</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          *ngFor="let additionalHoursTypeEvent of additionalHoursTypeEvents"
+          class="event-info-content"
+        >
+          <div class="event-summary-container">
+            <div class="event-summary-container__content">
+              <p>{{ additionalHoursTypeEvent.eventTypeName }}</p>
+            </div>
+            <div class="event-summary-container__content">
+              <div>
+                <p class="value-alignment">
+                  {{ additionalHoursTypeEvent.quantity }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
 </ng-container>
 
 <ng-template #noDayEvents>

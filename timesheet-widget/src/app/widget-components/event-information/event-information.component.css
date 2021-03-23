@@ -1,41 +1,43 @@
+
 .event-info-heading {
+  width: 100%;
   display: table;
   border-radius: 4px;
   background-color: #f3f3f4;
-  margin-left: 4%;
-  margin-right: 4%;
-  width: 89%;
 }
 
 .event-info-content {
+  width: 100%;
   display: table;
   border-radius: 4px;
-  margin-left: 4%;
-  margin-right: 4%;
-  width: 89%;
+  margin-top: 6px;
 }
 
 .no-events {
   position: relative;
   text-align: center;
-  height: 50%;
+  height: 40%;
 }
 
 .no-events__content {
   position: absolute;
-  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #a1a1a1;
+  margin-top: 100px;
 }
 
 .event-summary-container {
   display: flex;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.event-summary-container--margin{
+  margin: 10px;
 }
 
 .event-summary-container__content {
-  margin: auto;
-  padding-left: 7px;
-  padding-right: 7px;
   width: 50%;
 }
 
@@ -45,8 +47,8 @@
   float: right;
 }
 
-.duration {
-  text-align: right;
+.align-left {
+  float: left;
 }
 
 .value-alignment {
@@ -55,9 +57,6 @@
 
 .category-color {
   color: #a1a1a1;
-}
-
-.category-content {
 }
 
 .aligned-with-icon {

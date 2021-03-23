@@ -1,10 +1,8 @@
 <div [ngClass]="calendarItemWrapper" (click)="onWeekDayMarked(weekDay.day)">
-  <div class="alignment">
-    <div>
-      <p class="day__item">{{ weekDay.weekdayName }}</p>
-    </div>
+  <div class="day-wrapper">
+    <p class="day__item">{{ weekDay.weekdayName }}</p>
 
-    <div [ngClass]="dayStyle" class="test">
+    <div [ngClass]="dayStyle">
       <p class="day__item day___item--number">{{ weekDay.day }}</p>
     </div>
 

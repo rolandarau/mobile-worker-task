@@ -1,20 +1,21 @@
 <ng-container *ngIf="weekDays$ | async as weekdays">
   <ng-container *ngIf="selectedDayInfo$ | async as selectedDayInfo">
-      <div class="calendar-header week">
-        <div class="calendar-header__item week">
+    <div class="header-fixed">
+      <div class="calendar-header">
+        <div class="calendar-header__item item-margin">
           <h2>
             {{ monthNames[selectedDayInfo.month] }} {{ selectedDayInfo.year }}
           </h2>
         </div>
         <div
-          class="calendar-header__item"
+          class="calendar-header__item item-margin"
           (click)="onDaySelect(weekdays[6].day)"
         >
           <mat-icon class="mat-icon">calendar_today</mat-icon>
         </div>
       </div>
 
-      <div class="week calendar-wrapper">
+      <div class="week">
         <ng-container *ngFor="let weekDay of weekdays; let index = index">
           <app-day
             class="week__day"
@@ -27,11 +28,11 @@
         </ng-container>
       </div>
       <mat-divider></mat-divider>
-      <div class="calendar-header week timesheet-header">
-        <div class="calendar-header__item week">
+      <div class="calendar-header calendar-header__day-info">
+        <div class="calendar-header__item">
           <p class="calendar-header__item--date">
             {{ fullWeekdayNames[selectedDayInfo.weekdayName] }}
-            {{ selectedDayInfo.fullDate }}
+            {{ selectedDayInfo.fullDate | date: "d.MM.YYYY" }}
           </p>
         </div>
         <div class="calendar-header__item">
@@ -43,5 +44,6 @@
           </p>
         </div>
       </div>
+    </div>
   </ng-container>
 </ng-container>

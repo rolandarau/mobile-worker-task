@@ -3,7 +3,10 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { of } from 'rxjs';
-import { getGroupedEventsForDate } from 'src/app/store/selectors/events.selectors';
+import {
+  getEventsForDayExist,
+  getGroupedEventsForDate
+} from 'src/app/store/selectors/events.selectors';
 import { EventInformationComponent } from './event-information.component';
 
 describe('EventInformationComponent', () => {
@@ -36,6 +39,7 @@ describe('EventInformationComponent', () => {
       EXPENSES_TYPE: [],
       ADDITIONAL_HOURS_TYPE: [],
     });
+    store.overrideSelector(getEventsForDayExist, true);
     fixture.detectChanges();
   });
 

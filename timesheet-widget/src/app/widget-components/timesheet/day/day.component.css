@@ -1,6 +1,13 @@
+.day-wrapper {
+  width: 40px;
+  margin: 0 auto;
+}
+
 .day__today {
   border: 2px solid #f08900;
   border-radius: 4px;
+  width: 35px;
+  height: 35px;
 }
 
 .day__marked {
@@ -8,21 +15,26 @@
   background-color: #f08900;
   color: #f3f3f4;
   border-radius: 4px;
+  width: 35px;
+  height: 35px;
 }
 
 .day__weekend {
   border: 2px solid white;
   color: #a1a1a1;
-  width: 100%;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
 }
 
 .day__other {
+  width: 35px;
+  height: 35px;
   border: 2px solid white;
 }
 
 .day__item {
   text-align: center;
-  line-height: 20px;
 }
 
 .day__item--time {
@@ -32,23 +44,16 @@
 }
 
 .day___item--number {
-  margin-top: 10%;
+  margin-top: 7px;
 }
 
 .weekday {
   cursor: pointer;
-  width: 70%;
 }
 
 .weekend {
   cursor: pointer;
-  width: 70%;
   color: #a1a1a1;
-}
-
-.alignment {
-  width: 50%;
-  margin: 0 auto;
 }
 
 .mat-icon--grey {
