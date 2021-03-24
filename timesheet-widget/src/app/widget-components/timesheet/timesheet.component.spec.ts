@@ -8,7 +8,7 @@ import { setNewSelectedDay } from 'src/app/store/actions/calendar.actions';
 import {
   getSelectedDayNumber,
   getSelectedWeekDayInfo,
-  getWeekDays
+  getWeekDays,
 } from 'src/app/store/selectors/calendar.selectors';
 import { calendarDayMock } from '../../testing-mocks';
 import { CalendarDay } from '../../types';
@@ -47,6 +47,7 @@ describe('TimesheetComponent', () => {
     );
     mockStore.overrideSelector(getSelectedDayNumber, 1);
     mockStore.overrideSelector(getSelectedWeekDayInfo, calendarDayMock);
+    dispatchSpy = jest.spyOn(mockStore, 'dispatch');
     fixture.detectChanges();
   });
 
