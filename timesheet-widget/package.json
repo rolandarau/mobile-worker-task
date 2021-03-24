@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run start:frontend & json-server --watch ./data.json",
+    "start": "npm run start:frontend & npm run start:server",
     "start:frontend": "ng serve",
+    "start:server": "json-server --watch ./data.json",
     "build": "ng build",
     "test": "jest",
     "test:coverage": "jest --coverage",
