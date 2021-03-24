@@ -1,10 +1,10 @@
 {
   "events": {
-    "2021-03-17": [
+    "2021-03-19": [
       {
-        "quantity": 3,
-        "price": 1000,
-        "eventTypeName": "Event 1",
+        "quantity": 6,
+        "price": 222,
+        "eventTypeName": "Plumbing",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -16,9 +16,9 @@
         "lastTaskEnd": "15:00"
       },
       {
-        "quantity": 3,
-        "price": 1000,
-        "eventTypeName": "Event expenses type",
+        "quantity": 2,
+        "price": 566,
+        "eventTypeName": "Roads taxes",
         "isExpenseType": true,
         "isHoursEventType": false,
         "isAdditionalHoursEventType": false,
@@ -30,9 +30,9 @@
         "lastTaskEnd": "15:00"
       },
       {
-        "quantity": 3,
-        "price": 1000,
-        "eventTypeName": "AdditionalHours event",
+        "quantity": 4,
+        "price": 455,
+        "eventTypeName": "Concreting",
         "isExpenseType": false,
         "isHoursEventType": false,
         "isAdditionalHoursEventType": true,
@@ -46,21 +46,21 @@
       {
         "quantity": 3,
         "price": 1000,
-        "eventTypeName": "AdditionalHours event1",
+        "eventTypeName": "Loading materials",
         "isExpenseType": false,
         "isHoursEventType": false,
         "isAdditionalHoursEventType": true,
         "isWorkHour": false,
         "isApproved": false,
         "isRejected": true,
-        "tasksCount": 1,
+        "tasksCount": 2,
         "firstTaskStart": "09:00",
         "lastTaskEnd": "15:00"
       },
       {
         "quantity": 2,
         "price": 555,
-        "eventTypeName": "Event 2",
+        "eventTypeName": "Repair the power plant",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -72,9 +72,9 @@
         "lastTaskEnd": "15:00"
       },
       {
-        "quantity": 3,
+        "quantity": 7,
         "price": 1000,
-        "eventTypeName": "Event 3",
+        "eventTypeName": "Drywall installation",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -86,11 +86,11 @@
         "lastTaskEnd": "15:00"
       }
     ],
-    "2021-03-19": [
+    "2021-03-20": [
       {
-        "quantity": 3,
+        "quantity": 6,
         "price": 222,
-        "eventTypeName": "Event 4",
+        "eventTypeName": "Plumbing",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -103,8 +103,50 @@
       },
       {
         "quantity": 2,
+        "price": 566,
+        "eventTypeName": "Roads taxes",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 4,
+        "price": 455,
+        "eventTypeName": "Concreting",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": false,
+        "isRejected": true,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 3,
+        "price": 1000,
+        "eventTypeName": "Loading materials",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": false,
+        "isRejected": true,
+        "tasksCount": 2,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 2,
         "price": 555,
-        "eventTypeName": "Event 5",
+        "eventTypeName": "Repair the power plant",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -116,14 +158,14 @@
         "lastTaskEnd": "15:00"
       },
       {
-        "quantity": 3,
-        "price": 344,
-        "eventTypeName": "Event 6",
+        "quantity": 7,
+        "price": 1000,
+        "eventTypeName": "Drywall installation",
         "isExpenseType": false,
-        "isHoursEventType": false,
-        "isAdditionalHoursEventType": true,
-        "isWorkHour": true,
-        "isApproved": true,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": false,
         "isRejected": false,
         "tasksCount": 1,
         "firstTaskStart": "09:00",
@@ -134,7 +176,181 @@
       {
         "quantity": 3,
         "price": 222,
-        "eventTypeName": "Expense event",
+        "eventTypeName": "Unload materials",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 4,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "17:00"
+      },
+      {
+        "quantity": 2,
+        "price": 555,
+        "eventTypeName": "Roads taxes",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "17:00"
+      },
+      {
+        "quantity": 3,
+        "price": 344,
+        "eventTypeName": "Repair electricity",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 2,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "17:00"
+      }
+    ],
+    "2021-03-23": [
+      {
+        "quantity": 6,
+        "price": 222,
+        "eventTypeName": "Plumbing",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 2,
+        "price": 566,
+        "eventTypeName": "Roads taxes",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 4,
+        "price": 455,
+        "eventTypeName": "Concreting",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 3,
+        "price": 1000,
+        "eventTypeName": "Loading materials",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 2,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 2,
+        "price": 555,
+        "eventTypeName": "Repair the power plant",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 7,
+        "price": 1000,
+        "eventTypeName": "Drywall installation",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "09:00",
+        "lastTaskEnd": "15:00"
+      }
+    ],
+    "2021-03-24": [
+      {
+        "quantity": 3,
+        "price": 123,
+        "eventTypeName": "Buy wires",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": false,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 4,
+        "price": 555,
+        "eventTypeName": "Repair the power plant",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": false,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 3,
+        "price": 344,
+        "eventTypeName": "Event 6",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": true,
+        "isApproved": false,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "15:00"
+      }
+    ],
+    "2021-03-25": [
+      {
+        "quantity": 2,
+        "price": 123,
+        "eventTypeName": "Buy wires",
         "isExpenseType": true,
         "isHoursEventType": false,
         "isAdditionalHoursEventType": false,
@@ -147,8 +363,22 @@
       },
       {
         "quantity": 2,
+        "price": 444,
+        "eventTypeName": "Buy tools",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": false,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "11:00",
+        "lastTaskEnd": "15:00"
+      },
+      {
+        "quantity": 4,
         "price": 555,
-        "eventTypeName": "Event test2",
+        "eventTypeName": "Repair the power plant",
         "isExpenseType": false,
         "isHoursEventType": true,
         "isAdditionalHoursEventType": false,
@@ -156,7 +386,7 @@
         "isApproved": false,
         "isRejected": false,
         "tasksCount": 1,
-        "firstTaskStart": "09:00",
+        "firstTaskStart": "11:00",
         "lastTaskEnd": "15:00"
       },
       {
@@ -170,7 +400,7 @@
         "isApproved": false,
         "isRejected": false,
         "tasksCount": 1,
-        "firstTaskStart": "09:00",
+        "firstTaskStart": "11:00",
         "lastTaskEnd": "15:00"
       }
     ]
