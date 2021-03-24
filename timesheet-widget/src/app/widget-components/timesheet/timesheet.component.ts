@@ -36,6 +36,6 @@ export class TimesheetComponent implements OnInit {
     isGoToTodayAction
       ? this.router.navigate(['/timesheet', day])
       : this.router.navigate(['']);
-    this.store.dispatch(setNewSelectedDay({ day: day }));
+    this.store.dispatch(setNewSelectedDay({ day }));
   }
 }

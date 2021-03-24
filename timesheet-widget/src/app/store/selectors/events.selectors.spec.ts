@@ -2,7 +2,6 @@ import {
   eventMock,
   mockedCalendarState,
   mockedEventsSate,
-  weekMock,
 } from 'src/app/testing-mocks';
 import { CalendarState } from '../reducers/calendar.reducer';
 import { EventsState } from '../reducers/events.reducer';

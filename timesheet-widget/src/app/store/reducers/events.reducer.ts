@@ -4,12 +4,11 @@ import { fetchEvents, fetchEventsSuccess } from '../actions/events.actions';
 
 export const eventsFeatureKey = 'events';
 
-export interface EventsState{
-  workEvents?: FetchEventsRes,
+export interface EventsState {
+  workEvents?: FetchEventsRes;
   loading: boolean;
   loaded: boolean;
 }
-
 
 export const initialState: EventsState = {
   loading: false,

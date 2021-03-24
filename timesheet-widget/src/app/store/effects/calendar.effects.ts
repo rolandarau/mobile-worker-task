@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { mapTo, switchMap, withLatestFrom } from 'rxjs/operators';
+import { map, mapTo, withLatestFrom } from 'rxjs/operators';
 import { ApprovalState } from 'src/app/constants';
 import { CalendarDay, FetchEventsRes, WorkEvent } from 'src/app/types';
 import { processWeekDays, setWeekDays } from '../actions/calendar.actions';
@@ -16,32 +16,30 @@ export class CalendarEffects {
     this.actions$.pipe(ofType(fetchEventsSuccess), mapTo(processWeekDays()))
   );
 
-  public processWeekDays$: Observable<{}> = createEffect(() =>
+  public extractWeekDays$: Observable<{}> = createEffect(() =>
     this.actions$.pipe(
       ofType(processWeekDays),
       withLatestFrom(this.store.select(getEvents)),
-      switchMap(([_, workEvents]) => {
+      map(([_, workEvents]) => {
         const days: Date[] = [...Array(7)].map((_, i) => {
-          let d = new Date();
+          const d = new Date();
           d.setDate(d.getDate() - i);
           return d;
         });
 
-        const weekDays: CalendarDay[] = this.mapWeekDaysWithEvents(
+        const weekDays: CalendarDay[] = this.mapWeekDaysAndEventsInfo(
           days,
           workEvents
         );
         this.router.navigate(['/timesheet', weekDays[6].day]);
-        return [
-          setWeekDays({
-            days: weekDays,
-          }),
-        ];
+        return setWeekDays({
+          days: weekDays,
+        });
       })
     )
   );
 
-  private mapWeekDaysWithEvents(
+  private mapWeekDaysAndEventsInfo(
     days: Date[],
     allEvents: FetchEventsRes
   ): CalendarDay[] {
@@ -85,10 +83,11 @@ export class CalendarEffects {
   }
 
   private formatDate(date: Date): string {
-    let d: Date = new Date(date),
-      month = '' + (d.getMonth() + 1),
-      day = '' + d.getDate(),
-      year = d.getFullYear();
+    const d: Date = new Date(date);
+    const year = d.getFullYear();
+
+    let month = '' + (d.getMonth() + 1);
+    let day = '' + d.getDate();
 
     if (month.length < 2) {
       month = '0' + month;

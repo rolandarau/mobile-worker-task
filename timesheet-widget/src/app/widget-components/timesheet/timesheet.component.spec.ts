@@ -25,7 +25,6 @@ describe('TimesheetComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule.withRoutes([])],
         declarations: [TimesheetComponent],
         providers: [
           provideMockStore(),
@@ -59,7 +58,7 @@ describe('TimesheetComponent', () => {
     it('should dispatch setNewSelectedDay and navigate to timesheet when isGoToTodayAction is true', () => {
       component.onDaySelect(2, true);
 
-      expect(router.navigate).toHaveBeenCalledWith(['/timesheet, 2']);
+      expect(router.navigate).toHaveBeenCalledWith(['/timesheet', 2]);
       expect(dispatchSpy).toHaveBeenCalledWith(setNewSelectedDay({ day: 2 }));
     });
 

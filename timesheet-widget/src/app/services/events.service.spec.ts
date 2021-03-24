@@ -1,11 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClient } from '@angular/common/http';
 import {
   HttpClientTestingModule,
-  HttpTestingController,
+  HttpTestingController
 } from '@angular/common/http/testing';
-import { EventsService } from './events.service';
-import { HttpClient } from '@angular/common/http';
+import { TestBed } from '@angular/core/testing';
 import { FetchEventsRes } from '../types';
+import { EventsService } from './events.service';
 
 describe('EventsService', () => {
   let service: EventsService;

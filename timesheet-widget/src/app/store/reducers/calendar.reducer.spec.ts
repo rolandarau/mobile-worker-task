@@ -1,10 +1,10 @@
+import { weekMock } from '../../testing-mocks';
 import { setNewSelectedDay, setWeekDays } from '../actions/calendar.actions';
 import {
   calendarReducer,
   CalendarState,
-  initialState,
+  initialState
 } from './calendar.reducer';
-import { weekMock } from '../../testing-mocks';
 describe('Calendar Reducer', () => {
   describe('setWeekDays action', () => {
     it('should set weekdays', () => {

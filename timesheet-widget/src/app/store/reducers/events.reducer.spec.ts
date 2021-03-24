@@ -23,7 +23,7 @@ describe('Events Reducer', () => {
       expect(state).toEqual({
         loading: false,
         loaded: true,
-        workEvents: {}
+        workEvents: {},
       });
     });
   });
